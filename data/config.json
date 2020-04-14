@@ -1,0 +1,21 @@
+{
+  "tools": {
+    "server": {
+      "max_users": 5
+    }
+  },
+  "attacks": {
+    "captive_portal": {
+      "essid": "Free WiFi"
+    },
+  },
+  "interface": {
+    "display": {
+      "pins": [5, 4],
+      "size": [64, 48]
+    },
+    "button": {
+      "pin": 0
+    }
+  }
+}
