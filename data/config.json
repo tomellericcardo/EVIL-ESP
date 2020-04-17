@@ -6,8 +6,12 @@
   },
   "attacks": {
     "captive_portal": {
+      "lang": "en",
       "essid": "Free WiFi"
     },
+    "evil_twin": {
+      "lang": "en"
+    }
   },
   "interface": {
     "display": {

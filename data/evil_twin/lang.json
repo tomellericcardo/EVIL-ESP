@@ -1,0 +1,12 @@
+{
+  "en": {
+    "info": "Your router has just been updated! Enter your WiFi password in order to complete this operation",
+    "password": "WiFi password",
+    "confirm": "Confirm"
+  },
+  "it": {
+    "info": "Il tuo modem &egrave; stato aggiornato! Inserisci la tua password di rete per completare l'operazione",
+    "password": "Password di rete",
+    "confirm": "Conferma"
+  }
+}

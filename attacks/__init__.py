@@ -8,7 +8,7 @@ class Attacks:
 
   def __init__(self, tools, config):
     self.captive_portal = CaptivePortal(tools, config['captive_portal'])
-    self.evil_twin = EvilTwin(tools)
+    self.evil_twin = EvilTwin(tools, config['evil_twin'])
 
   def start_captive_portal(self):
     self.captive_portal.start()

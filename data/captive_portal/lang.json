@@ -1,0 +1,20 @@
+{
+  "en": {
+    "signup": "Sign up",
+    "description": "Fast & free secure WiFi",
+    "info": "Sign up into our network with a valid e-mail address to get a limitless free connection",
+    "email": "E-mail address",
+    "pass1": "Password",
+    "pass2": "Repeat password",
+    "register": "Register"
+  },
+  "it": {
+    "signup": "Accedi",
+    "description": "Veloce, sicuro, gratuito",
+    "info": "Per continuare a navigare senza limiti, registrati con un indirizzo e-mail valido",
+    "email": "Indirizzo e-mail",
+    "pass1": "Password",
+    "pass2": "Ripeti password",
+    "register": "Registrati"
+  }
+}
