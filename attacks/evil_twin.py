@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
 
+import ujson as json
+
 
 class EvilTwin:
 
-  def __init__(self, tools):
+  def __init__(self, tools, config):
     self.tools = tools
     self.lang = config['lang']
     self.web_page = self.get_page()
 
   def get_page(self):
     page = open('data/evil_twin/page.html').read()
-    lang = open('data/evil_twin/lang.json').read()[self.lang]
+    lang_file = open('data/evil_twin/lang.json')
+    lang = json.load(lang_file)[self.lang]
     page = page.replace('{lang}', self.lang)
     for key in lang:
       page = page.replace('{%s}' % key, lang[key])

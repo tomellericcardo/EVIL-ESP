@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import ujson as json
+
 
 class CaptivePortal:
 
@@ -11,7 +13,8 @@ class CaptivePortal:
 
   def get_page(self):
     page = open('data/captive_portal/page.html').read()
-    lang = open('data/captive_portal/lang.json').read()[self.lang]
+    lang_file = open('data/captive_portal/lang.json')
+    lang = json.load(lang_file)[self.lang]
     page = page.replace('{lang}', self.lang)
     page = page.replace('{essid}', self.essid)
     for key in lang:
