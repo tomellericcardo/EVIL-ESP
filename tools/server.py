@@ -65,8 +65,18 @@ class Server:
       response = self.dns_response(data)
       self.udp_socket.sendto(response, address)
       self.dns_requests += 1
-    except Exception as e:
-      print(e)
+    except:
+      pass
+
+  def parse_request(self, request_body):
+    request_data = {}
+    request_body = request_body.split('s=s&')[1]
+    for argument in request_body.split('&'):
+      key_value = argument.split('=')
+      key = key_value[0]
+      value = key_value[1]
+      request_data[key] = value
+    return request_data
 
   def send_page(self, connection):
     connection.send('HTTP/1.1 200 OK\n')
@@ -81,13 +91,14 @@ class Server:
       request = str(connection.recv(2048), 'utf-8')
       if request.split(' ')[0] == 'POST':
         request_body = str(connection.recv(2048), 'utf-8')
-        self.post_callback(request_body)
+        request_data = self.parse_request(request_body)
+        self.post_callback(request_data)
         self.post_requests += 1
       else:
         self.get_requests += 1
       self.send_page(connection)
-    except Exception as e:
-      print(e)
+    except:
+      pass
 
   def start(self, ip_address, title, web_page, post_callback):
     self.ip_address = ip_address

