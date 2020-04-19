@@ -31,6 +31,7 @@ class Main:
   def attacks_interface(self):
     return self.interface.show('ATTACKS', [
       Voice('Back', self.main_interface),
+      Voice('Fake APs', self.attacks.start_fake_aps),
       Voice('Captive Portal', self.attacks.start_captive_portal),
       Voice('Evil Twin', self.evil_twin_interface)
     ])

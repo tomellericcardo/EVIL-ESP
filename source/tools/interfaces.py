@@ -11,6 +11,12 @@ class Station:
   def stop(self):
     self.sta_if.active(False)
 
+  def active(self):
+    self.sta_if.active(True)
+
+  def send_packet(self, channel, packet):
+    self.sta_if.freedom(channel, packet)
+
   def scan(self):
     self.sta_if.active(True)
     return self.sta_if.scan()

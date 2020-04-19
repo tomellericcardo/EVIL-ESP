@@ -1,0 +1,80 @@
+{
+  "tools": {
+    "server": {
+      "max_users": 5
+    }
+  },
+  "attacks": {
+    "fake_aps": {
+      "channel": 10,
+      "essids": [
+        "Mom Use This One",
+        "Abraham Linksys",
+        "Benjamin FrankLAN",
+        "Martin Router King",
+        "John Wilkes Bluetooth",
+        "Pretty Fly for a Wi-Fi",
+        "Bill Wi the Science Fi",
+        "I Believe Wi Can Fi",
+        "Tell My Wi-Fi Love Her",
+        "No More Mister Wi-Fi",
+        "LAN Solo",
+        "The LAN Before Time",
+        "Silence of the LANs",
+        "House LANister",
+        "Winternet Is Coming",
+        "Ping’s Landing",
+        "The Ping in the North",
+        "This LAN Is My LAN",
+        "Get Off My LAN",
+        "The Promised LAN",
+        "The LAN Down Under",
+        "FBI Surveillance Van 4",
+        "Area 51 Test Site",
+        "Drive-By Wi-Fi",
+        "Planet Express",
+        "Wu Tang LAN",
+        "Darude LANstorm",
+        "Never Gonna Give You Up",
+        "Hide Yo Kids, Hide Yo Wi-Fi",
+        "Loading…",
+        "Searching…",
+        "VIRUS.EXE",
+        "Virus-Infected Wi-Fi",
+        "Starbucks Wi-Fi",
+        "Text ###-#### for Password",
+        "Yell ____ for Password",
+        "The Password Is 1234",
+        "Free Public Wi-Fi",
+        "No Free Wi-Fi Here",
+        "Get Your Own Damn Wi-Fi",
+        "It Hurts When IP",
+        "Dora the Internet Explorer",
+        "404 Wi-Fi Unavailable",
+        "Porque-Fi",
+        "Titanic Syncing",
+        "Test Wi-Fi Please Ignore",
+        "Drop It Like It’s Hotspot",
+        "Life in the Fast LAN",
+        "The Creep Next Door",
+        "Ye Olde Internet"
+      ]
+    },
+    "captive_portal": {
+      "lang": "en",
+      "essid": "Free WiFi"
+    },
+    "evil_twin": {
+      "lang": "en"
+    }
+  },
+  "interface": {
+    "display": {
+      "pins": [5, 4],
+      "size": [64, 48]
+    },
+    "button": {
+      "pin": 0
+    }
+  }
+}
