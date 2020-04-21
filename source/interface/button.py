@@ -7,8 +7,9 @@ from time import sleep_ms
 class Button:
 
   def __init__(self, config):
-    pin = config['pin']
-    self.button = Pin(pin, Pin.IN, Pin.PULL_UP)
+    if config['enabled']:
+      pin = config['pin']
+      self.button = Pin(pin, Pin.IN, Pin.PULL_UP)
 
   def button_pressed(self):
     return self.button.value() == 0

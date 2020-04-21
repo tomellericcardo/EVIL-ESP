@@ -21,7 +21,7 @@ class Tools:
     self.station.send_packet(channel, packet)
     if sent % 50 == 0:
       self.interface.show_single([
-        'FAKE APs', 'Packets:', str(sent)
+        'SPAMMER', 'Packets:', str(sent)
       ])
 
   def start_server(self, title, web_page, post_callback):

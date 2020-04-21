@@ -8,13 +8,15 @@ from time import sleep_ms
 class Display:
 
   def __init__(self, config):
-    pins = config['pins']
-    size = config['size']
-    i2c = I2C(-1, Pin(pins[0]), Pin(pins[1]))
-    self.display = SSD1306_I2C(size[0], size[1], i2c)
-    self.counter = 0
-    self.rows = size[1] // 8
-    self.cols = size[0] // 8
+    self.enabled = config['enabled']
+    if self.enabled:
+      pins = config['pins']
+      size = config['size']
+      i2c = I2C(-1, Pin(pins[0]), Pin(pins[1]))
+      self.display = SSD1306_I2C(size[0], size[1], i2c)
+      self.counter = 0
+      self.rows = size[1] // 8
+      self.cols = size[0] // 8
 
   def sleep_screen(self):
     self.display.fill(0)
@@ -53,8 +55,9 @@ class Display:
     self.counter += 1
 
   def show_single(self, voices):
-    self.display.fill(0)
-    for i in range(len(voices)):
-      voice = voices[i]
-      self.display.text(voice, 0, 8 * i)
-    self.display.show()
+    if self.enabled:
+      self.display.fill(0)
+      for i in range(len(voices)):
+        voice = voices[i]
+        self.display.text(voice, 0, 8 * i)
+      self.display.show()

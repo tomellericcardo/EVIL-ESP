@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from .fake_aps import FakeAPs
+from .beacon_spammer import BeaconSpammer
 from .captive_portal import CaptivePortal
 from .evil_twin import EvilTwin
 
@@ -8,12 +8,12 @@ from .evil_twin import EvilTwin
 class Attacks:
 
   def __init__(self, tools, config):
-    self.fake_aps = FakeAPs(tools, config['fake_aps'])
+    self.beacon_spammer = BeaconSpammer(tools, config['beacon_spammer'])
     self.captive_portal = CaptivePortal(tools, config['captive_portal'])
     self.evil_twin = EvilTwin(tools, config['evil_twin'])
 
-  def start_fake_aps(self):
-    self.fake_aps.start()
+  def start_beacon_spammer(self):
+    self.beacon_spammer.start()
 
   def start_captive_portal(self):
     self.captive_portal.start()

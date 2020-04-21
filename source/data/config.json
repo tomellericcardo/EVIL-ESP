@@ -1,11 +1,23 @@
 {
+  "interface": {
+    "display": {
+      "enabled": true,
+      "pins": [5, 4],
+      "size": [64, 48]
+    },
+    "button": {
+      "enabled": true,
+      "pin": 0
+    }
+  },
   "tools": {
     "server": {
       "max_users": 5
     }
   },
   "attacks": {
-    "fake_aps": {
+    "default": "captive_portal",
+    "beacon_spammer": {
       "channel": 10,
       "essids": [
         "Mom Use This One",
@@ -23,7 +35,7 @@
         "Silence of the LANs",
         "House LANister",
         "Winternet Is Coming",
-        "Ping’s Landing",
+        "Ping's Landing",
         "The Ping in the North",
         "This LAN Is My LAN",
         "Get Off My LAN",
@@ -37,18 +49,15 @@
         "Darude LANstorm",
         "Never Gonna Give You Up",
         "Hide Yo Kids, Hide Yo Wi-Fi",
-        "Loading…",
-        "Searching…",
+        "Loading...",
+        "Searching...",
         "VIRUS.EXE",
         "Virus-Infected Wi-Fi",
         "Starbucks Wi-Fi",
-        "Text ###-#### for Password",
-        "Yell ____ for Password",
         "The Password Is 1234",
         "Free Public Wi-Fi",
         "No Free Wi-Fi Here",
         "Get Your Own Damn Wi-Fi",
-        "It Hurts When IP",
         "Dora the Internet Explorer",
         "404 Wi-Fi Unavailable",
         "Porque-Fi",
@@ -65,16 +74,8 @@
       "essid": "Free WiFi"
     },
     "evil_twin": {
-      "lang": "en"
-    }
-  },
-  "interface": {
-    "display": {
-      "pins": [5, 4],
-      "size": [64, 48]
-    },
-    "button": {
-      "pin": 0
+      "lang": "en",
+      "default_essid": "Insert Default Target"
     }
   }
 }

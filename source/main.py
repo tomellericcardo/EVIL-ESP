@@ -12,10 +12,11 @@ from attacks import Attacks
 class Main:
 
   def __init__(self):
-    config = self.load_config()
-    self.interface = Interface(config['interface'])
-    self.tools = Tools(self.interface, config['tools'])
-    self.attacks = Attacks(self.tools, config['attacks'])
+    self.config = self.load_config()
+    self.interface = Interface(self.config['interface'])
+    self.tools = Tools(self.interface, self.config['tools'])
+    self.attacks = Attacks(self.tools, self.config['attacks'])
+    self.tools.stop_interfaces()
 
   def load_config(self):
     with open('data/config.json') as f:
@@ -31,7 +32,7 @@ class Main:
   def attacks_interface(self):
     return self.interface.show('ATTACKS', [
       Voice('Back', self.main_interface),
-      Voice('Fake APs', self.attacks.start_fake_aps),
+      Voice('Beacon Spammer', self.attacks.start_beacon_spammer),
       Voice('Captive Portal', self.attacks.start_captive_portal),
       Voice('Evil Twin', self.evil_twin_interface)
     ])
@@ -55,8 +56,8 @@ class Main:
   def logs_interface(self):
     return self.interface.show('LOGS', [
       Voice('Back', self.main_interface),
-      Voice('Captive Portal Logs', self.captive_portal_logs_interface),
-      Voice('Evil Twin Logs', self.evil_twin_logs_interface)
+      Voice('Captive Portal', self.captive_portal_logs_interface),
+      Voice('Evil Twin', self.evil_twin_logs_interface)
     ])
 
   def captive_portal_logs_interface(self):
@@ -84,6 +85,20 @@ class Main:
     self.interface.sleep_screen()
     machine.deepsleep()
 
+  def start(self):
+    display_enabled = self.config['interface']['display']['enabled']
+    button_enabled = self.config['interface']['button']['enabled']
+    default_attack = self.config['attacks']['default']
+    if display_enabled and button_enabled:
+      self.loop()
+    else if default_attack == 'beacon_spammer':
+      self.attacks.start_beacon_spammer
+    else if default_attack == 'captive_portal':
+      self.attacks.start_captive_portal
+    else if default_attack == 'evil_twin':
+      target_essid = self.config['attacks']['evil_twin']['default_essid']
+      self.attacks.start_evil_twin(target_essid)
+
   def loop(self, callback = None):
     while True:
       if not callback:
@@ -93,6 +108,5 @@ class Main:
 
 if __name__ == '__main__':
   main = Main()
-  main.tools.stop_interfaces()
   gc.collect()
-  main.loop()
+  main.start()

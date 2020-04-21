@@ -40,7 +40,7 @@ TAIL = [
 ]
 
 
-class FakeAPs:
+class BeaconSpammer:
 
   def __init__(self, tools, config):
     self.tools = tools
