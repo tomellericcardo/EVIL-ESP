@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from usocket import socket, AF_INET, SOCK_DGRAM, SOCK_STREAM
+import gc
 
 
 class Server:
@@ -65,8 +66,13 @@ class Server:
       response = self.dns_response(data)
       self.udp_socket.sendto(response, address)
       self.dns_requests += 1
-    except:
-      pass
+    except Exception as e:
+      print(e)
+
+  def format_value(self, value):
+    value = value.replace('+', ' ')
+    value = value.replace('%0D%0A', '\n')
+    return value
 
   def parse_request(self, request_body):
     request_data = {}
@@ -74,7 +80,7 @@ class Server:
     for argument in request_body.split('&'):
       key_value = argument.split('=')
       key = key_value[0]
-      value = key_value[1]
+      value = self.format_value(key_value[1])
       request_data[key] = value
     return request_data
 
@@ -97,8 +103,8 @@ class Server:
       else:
         self.get_requests += 1
       self.send_page(connection)
-    except:
-      pass
+    except Exception as e:
+      print(e)
 
   def start(self, ip_address, title, web_page, post_callback):
     self.ip_address = ip_address
@@ -106,6 +112,7 @@ class Server:
     self.web_page = web_page
     self.post_callback = post_callback
     while True:
+      gc.collect()
       self.show_status()
       self.handle_udp()
       self.handle_tcp()

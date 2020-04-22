@@ -13,6 +13,10 @@
   "tools": {
     "server": {
       "max_users": 5
+    },
+    "config_mode": {
+      "essid": "EVIL-ESP",
+      "password": "ESPassword"
     }
   },
   "attacks": {
@@ -36,37 +40,7 @@
         "House LANister",
         "Winternet Is Coming",
         "Ping's Landing",
-        "The Ping in the North",
-        "This LAN Is My LAN",
-        "Get Off My LAN",
-        "The Promised LAN",
-        "The LAN Down Under",
-        "FBI Surveillance Van 4",
-        "Area 51 Test Site",
-        "Drive-By Wi-Fi",
-        "Planet Express",
-        "Wu Tang LAN",
-        "Darude LANstorm",
-        "Never Gonna Give You Up",
-        "Hide Yo Kids, Hide Yo Wi-Fi",
-        "Loading...",
-        "Searching...",
-        "VIRUS.EXE",
-        "Virus-Infected Wi-Fi",
-        "Starbucks Wi-Fi",
-        "The Password Is 1234",
-        "Free Public Wi-Fi",
-        "No Free Wi-Fi Here",
-        "Get Your Own Damn Wi-Fi",
-        "Dora the Internet Explorer",
-        "404 Wi-Fi Unavailable",
-        "Porque-Fi",
-        "Titanic Syncing",
-        "Test Wi-Fi Please Ignore",
-        "Drop It Like It’s Hotspot",
-        "Life in the Fast LAN",
-        "The Creep Next Door",
-        "Ye Olde Internet"
+        "The Ping in the North"
       ]
     },
     "captive_portal": {

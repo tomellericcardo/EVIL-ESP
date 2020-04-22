@@ -9,7 +9,6 @@ class CaptivePortal:
     self.tools = tools
     self.lang = config['lang']
     self.essid = config['essid']
-    self.web_page = self.get_page()
 
   def get_page(self):
     page = open('data/captive_portal/page.html').read()
@@ -33,6 +32,6 @@ class CaptivePortal:
     self.tools.start_ap(self.essid)
     self.tools.start_server(
       'PORTAL',
-      self.web_page,
+      self.get_page,
       self.log_credentials
     )

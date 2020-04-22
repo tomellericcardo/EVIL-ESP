@@ -19,13 +19,20 @@ class Main:
     self.tools.stop_interfaces()
 
   def load_config(self):
-    with open('data/config.json') as f:
+    with open('data/config/config.json') as f:
       return json.load(f)
 
   def main_interface(self):
     return self.interface.show('EVIL-ESP', [
+      Voice('Options', self.options_interface),
       Voice('Attacks', self.attacks_interface),
-      Voice('Logs', self.logs_interface),
+      Voice('Logs', self.logs_interface)
+    ])
+
+  def options_interface(self):
+    return self.interface.show('OPTIONS', [
+      Voice('Back', self.main_interface),
+      Voice('Config Mode', self.tools.start_config_mode),
       Voice('Sleep', self.device_sleep)
     ])
 
@@ -91,11 +98,11 @@ class Main:
     default_attack = self.config['attacks']['default']
     if display_enabled and button_enabled:
       self.loop()
-    else if default_attack == 'beacon_spammer':
+    elif default_attack == 'beacon_spammer':
       self.attacks.start_beacon_spammer
-    else if default_attack == 'captive_portal':
+    elif default_attack == 'captive_portal':
       self.attacks.start_captive_portal
-    else if default_attack == 'evil_twin':
+    elif default_attack == 'evil_twin':
       target_essid = self.config['attacks']['evil_twin']['default_essid']
       self.attacks.start_evil_twin(target_essid)
 
