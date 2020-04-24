@@ -10,5 +10,8 @@ import network
 sta = network.WLAN(network.STA_IF)
 sta.active(True)
 
+channel = 1
+packet = bytearray([...])
+
 sta.freedom(channel, packet)
 ```
