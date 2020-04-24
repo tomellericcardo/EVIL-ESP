@@ -36,3 +36,9 @@ Usually, when performing an evil twin attack, you may want to send deauthenticat
 Unfortunately, Micropython doesn't provide a function which lets you send 802.11 raw packets, but even if it's possible to expose the `wifi_send_pkt_freedom` function to the network module (as I did to add the *Beacon Spammer* attack option), that function prevents the transmission of management frames such as deauthentication and disassociation after the version 1.3 of the Espressif SDK :man_facepalming:
 
 Maybe one day I will try to build Micropython using that old SDK, but until then, you can easily do this **super dangerous action** with any PC running Linux, so have fun!
+
+**Update**: if you want to use another ESP8266 board to deauthenticate devices and complete the evil twin attack, look at this simple [Arduino sketch](https://github.com/tomellericcardo/EVIL-ESP/tree/master/deauther) I made.
+
+## Disclaimer :heavy_exclamation_mark:
+Please, use this code responsibly and do not use it against others without their permissiona.
+Keep in mind that I will assume no responsibility for the improper use of these tools.
