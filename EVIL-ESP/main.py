@@ -99,9 +99,9 @@ class Main:
     if display_enabled and button_enabled:
       self.loop()
     elif default_attack == 'beacon_spammer':
-      self.attacks.start_beacon_spammer
+      self.attacks.start_beacon_spammer()
     elif default_attack == 'captive_portal':
-      self.attacks.start_captive_portal
+      self.attacks.start_captive_portal()
     elif default_attack == 'evil_twin':
       target_essid = self.config['attacks']['evil_twin']['default_essid']
       self.attacks.start_evil_twin(target_essid)
